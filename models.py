@@ -90,7 +90,6 @@ class SimileGenerator(FillMaskPipeline):
             # Calculates the score
             score = score_fnt(logits, ele=ele, pos_vocab=self.pos_vocab, weight=weight, mode=mode)
             score_sorted, id = score.topk(top_k)
-            
             token = self.tokenizer.decode(id).split(' ')
 
             sorted_scores.append(score_sorted)
@@ -107,7 +106,7 @@ class PSGenerator(SimileGenerator):
     def __init__(self, bert_path='.\model\Bert_ant', glove_path='.\model\glove'):
         model = BertForMaskedLM.from_pretrained(bert_path)
         tokenizer = BertTokenizer.from_pretrained(bert_path)
-        vocabs = POSVocab(tokenizer, adj_file='vocab/adj_4800', noun_file="vocab/concert_rate")
+        vocabs = POSVocab(tokenizer, adj_file='vocab/adj_4800', noun_file="vocab/noun_concrete")
         device = torch.device("cpu")
         if torch.cuda.is_available():
             device = torch.device("cuda:0")
