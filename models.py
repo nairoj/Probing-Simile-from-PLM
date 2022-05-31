@@ -106,7 +106,7 @@ class PSGenerator(SimileGenerator):
     def __init__(self, bert_path='.\model\Bert_ant', glove_path='.\model\glove'):
         model = BertForMaskedLM.from_pretrained(bert_path)
         tokenizer = BertTokenizer.from_pretrained(bert_path)
-        vocabs = POSVocab(tokenizer, adj_file='vocab/adj_4800.plk', noun_file="vocab/noun_concrete.pkl")
+        vocabs = POSVocab(tokenizer, adj_file='vocab/adj_4800.pkl', noun_file="vocab/noun_concrete.pkl")
         device = torch.device("cpu")
         if torch.cuda.is_available():
             device = torch.device("cuda:0")

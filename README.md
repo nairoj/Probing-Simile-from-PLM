@@ -21,5 +21,5 @@ Second, we mask a word at the end of *amod* relation, instead of randomly maskin
 Finally, the PLM is finetuned on the constructed dataset with MLM loss. You can import our finetuned model [nairoj/Bert_ANT](https://huggingface.co/nairoj/Bert_ANT) by using [HuggingFace's Transformers](https://github.com/huggingface/transformers). 
 
 ## Simile Triple Completion
-Our method of SI and SG are shown in this [Colab Script]().
+Our method of SI and SG are shown in this [Colab Script](https://colab.research.google.com/drive/1hEsHVtmwFNeKBNswtaKh7GrTish0sZRI?usp=sharing).
 
